@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="discover elegant, classy, and strong appealing refreshing perfumes"
+    />
+    <!-- Open Graph for SEO -->
+    <meta property="og:title" content="John J. Magai — Frontend Developer" />
+    <meta
+      property="og:description"
+      content="I build clean, fast, responsive and accessible web experiences."
+    />
+    <meta
+      property="og:image"
+      content="https://res.cloudinary.com/doowcez6w/image/upload/v1780394842/jbt-logo_wn7fb5.png"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" />
+    <!-- <meta property="og:image:width" content="1200" /> -->
+    <!-- <meta property="og:image:height" content="630" /> -->
+    <title>JBT | FreshNess Perfumes</title>
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Cormorant+Garamond:wght@400;700&family=Lato:wght@400;700&family=Montserrat:wght@400;700&family=Great+Vibes&family=Dancing+Script:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" defer></script>
+  </head>
+
+  <body>
+    <header id="header">
+      <figure>
+        <img
+          class="logo"
+          src="https://res.cloudinary.com/doowcez6w/image/upload/v1780394811/fnLogo_e6mkhp.png"
+          alt="webpage's logo"
+        />
+      </figure>
+      <div class="select-wrapper">
+        <select id="select-category" class="select">
+          <option value="">Select product's category...</option>
+          <option value="#fm-category">Fresh &amp; Modern</option>
+          <option value="#le-category">Luxury &amp; Elegant</option>
+          <option value="#md-category">Mystical &amp; Dreamy</option>
+          <option value="#rf-category">Romantic &amp; Floral</option>
+          <option value="#sb-category">Sensual &amp; Bold</option>
+        </select>
+        <div class="shopping-cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="cart-count"></span>
+        </div>
+      </div>
+      <nav id="nav-bar">
+        <!-- Hamburger icon -->
+        <i class="fas fa-bars" id="menu-toggle" class="menu-toggle"></i>
+        <ul id="nav-links" class="nav-links">
+          <li><a href="#home-hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#about">Posts</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id="main">
+      <h1 class="wlc-h1">Welcome to FreshNess Hub</h1>
+      <p class="intro-para">
+        Step into a world where every scent tells a story. From the tender
+        embrace of <em>Romantic &amp; Floral</em> notes to the mysterious allure
+        of <em>Mystical &amp; Dreamy</em>, our perfumes are crafted to match
+        every mood and moment. Indulge in the prestige of
+        <em>Luxury &amp; Elegant</em>, refresh your spirit with
+        <em>Fresh &amp; Modern</em>, or ignite passion with
+        <em>Sensual &amp; Bold blends</em>. Each fragrance is more than a
+        perfume—it&apos;s an experience, a memory, a signature that lingers long
+        after you&apos;ve left the room.
+      </p>
+      <section id="home-hero">
+        <figure>
+          <img
+            id="hero-img"
+            class="hero-img"
+            src=""
+            alt="product's brand pictures"
+          />
+          <figcaption>Fragrance that speaks your soul.</figcaption>
+        </figure>
+        <button id="shop-btn" type="button">Shop Now</button>
+        <p class="message"></p>
+      </section>
+      <hr class="hr-rule" />
+      <section id="products-catalog" class="flex-display products-catalog">
+        <article id="fm-category">
+          <figure>
+            <img
+              src="https://res.cloudinary.com/doowcez6w/image/upload/v1780398306/fm-ctg_gius3h.jpg"
+              alt="fresh and modern brand picture"
+            />
+            <figcaption>Clean, crisp, and effortlessly modern</figcaption>
+          </figure>
+          <h2 class="brand-name">Fresh and Modern</h2>
+          <p class="product1"></p>
+          <p class="price">&dollar;200</p>
+          <button class="cta-btn" type="button">Add to Cart</button>
+        </article>
+        <article id="le-category">
+          <figure>
+            <img
+              src="https://res.cloudinary.com/doowcez6w/image/upload/v1780398352/le-ctg_eimtb2.jpg"
+              alt="luxury and elegant brand picture"
+            />
+            <figcaption>Golden sophistication, pure prestige</figcaption>
+          </figure>
+          <h2 class="brand-name">Luxury and Elegant</h2>
+          <p class="product2"></p>
+          <p class="price">&dollar;250</p>
+          <button class="cta-btn" type="button">Add to Cart</button>
+        </article>
+        <article id="md-category">
+          <figure>
+            <img
+              src="https://res.cloudinary.com/doowcez6w/image/upload/v1780398362/md-ctg_ckk4u5.jpg"
+              alt="mystical and dreamy brand picture"
+            />
+            <figcaption>Mystery wrapped in moonlight</figcaption>
+          </figure>
+          <h2 class="brand-name">Mystical and Dreamy</h2>
+          <p class="product3"></p>
+          <p class="price">&dollar;200</p>
+          <button class="cta-btn" type="button">Add to Cart</button>
+        </article>
+        <article id="rf-category">
+          <figure>
+            <img
+              src="https://res.cloudinary.com/doowcez6w/image/upload/v1780398375/rf-ctg_ew5jrf.jpg"
+              alt="romantic and floral brand picture"
+            />
+            <figcaption>A touch of romance in every bloom</figcaption>
+          </figure>
+          <h2 class="brand-name">Romantic and Floral</h2>
+          <p class="product4"></p>
+          <p class="price">&dollar;250</p>
+          <button class="cta-btn" type="button">Add to Cart</button>
+        </article>
+        <article id="sb-category">
+          <figure>
+            <img
+              src="https://res.cloudinary.com/doowcez6w/image/upload/v1780398394/sb-ctg_cluxxd.jpg"
+              alt="sensual and bold brand picture"
+            />
+            <figcaption>Passion that lingers boldly</figcaption>
+          </figure>
+          <h2 class="brand-name">Sensual and Bold</h2>
+          <p class="product5"></p>
+          <p class="price">&dollar;150</p>
+          <button class="cta-btn" type="button">Add to Cart</button>
+        </article>
+        <article id="xfm-ctg">
+          <figure>
+            <img
+              src="https://res.cloudinary.com/doowcez6w/image/upload/v1780398306/fm-ctg_gius3h.jpg"
+              alt="fresh and modern brand picture"
+            />
+            <figcaption>Amber warmth, daring allure</figcaption>
+          </figure>
+          <h2 class="brand-name">fresh and modern</h2>
+          <p class="product6"></p>
+          <p class="price">&dollar;150</p>
+          <button class="cta-btn" type="button">Add to Cart</button>
+        </article>
+      </section>
+      <hr class="hr-rule" />
+      <!-- About Section Elements -->
+      <section id="about" class="about-author">
+        <article class="about1-article">
+          <figure>
+            <img
+              src="https://res.cloudinary.com/doowcez6w/image/upload/v1780394842/jbt-logo_wn7fb5.png"
+              alt="author's logo"
+              class="author-img"
+            />
+          </figure>
+        </article>
+        <article class="about2-article">
+          <h3 class="author-h3">Hi, I'm John Magai</h3>
+          <p>
+            I build <strong>clean, fast, responsive</strong> and
+            <strong>user&hyphen;friendly web experience</strong>
+            for business and individuals.
+          </p>
+          <a
+            id="linkedin"
+            href="https://www.linkedin.com/in/johnymagai"
+            target="_blank"
+            >Connect with me on LinkedIn</a
+          >
+        </article>
+      </section>
+      <!-- Contact Form Section  -->
+      <section id="contact" class="contact">
+        <form
+          id="contact-form"
+          action="https://formspree.io/f/xnjwvgga"
+          method="post"
+          autocomplete="on"
+        >
+          <h2>Contact us</h2>
+          <fieldset>
+            <legend>
+              ( <span class="asterisk">*</span> indicates required field )
+            </legend>
+            <label for="full-name"
+              >Full Name<span class="asterisk">*</span></label
+            >
+            <input
+              id="full-name"
+              type="text"
+              placeholder="James Doe"
+              name="name"
+              required
+            />
+            <label for="email">Email<span class="asterisk">*</span></label>
+            <input
+              id="email"
+              type="email"
+              name="email"
+              placeholder="james7@email.com"
+              required
+            />
+            <label for="comments"
+              >Comment Please<span class="asterisk">*</span></label
+            >
+            <textarea
+              id="comments"
+              name="comments"
+              rows="5"
+              cols="30"
+              required
+            ></textarea>
+            <button id="submit-btn" class="submit-btn" type="submit">
+              Submit
+            </button>
+          </fieldset>
+        </form>
+      </section>
+    </main>
+    <!-- <section id="dialog-modal"> -->
+    <dialog id="dialog">
+      <h3 class="head-3">Items on your cart:</h3>
+      <ul>
+        <li>
+          <span class="item-selected-with-price">A</span>
+          <input
+            type="button"
+            class="remove-item-btn"
+            name="remove-item"
+            value="Remove"
+          />
+        </li>
+        <li>
+          <span class="item-selected-with-price">B</span>
+          <input
+            type="button"
+            class="remove-item-btn"
+            name="remove-item"
+            value="Remove"
+          />
+        </li>
+        <li>
+          <span class="item-selected-with-price">C</span>
+          <input
+            type="button"
+            class="remove-item-btn"
+            name="remove-item"
+            value="Remove"
+          />
+        </li>
+        <li>
+          <span class="item-selected-with-price">D</span>
+          <input
+            type="button"
+            class="remove-item-btn"
+            name="remove-item"
+            value="Remove"
+          />
+        </li>
+        <li>
+          <span class="item-selected-with-price">E</span>
+          <input
+            type="button"
+            class="remove-item-btn"
+            name="remove-item"
+            value="Remove"
+          />
+        </li>
+        <li>
+          <span class="item-selected-with-price">F</span>
+          <input
+            type="button"
+            class="remove-item-btn"
+            name="remove-item"
+            value="Remove"
+          />
+        </li>
+      </ul>
+      <button type="button" class="checkout-btn">Checkout</button>
+      <button type="button" class="close-btn">Cancel</button>
+    </dialog>
+    <!-- </section> -->
+    <footer class="footer">
+      <p class="small-text">
+        © 2026 Jay Bombastic Tech • Built with Passion 💙
+      </p>
+    </footer>
+  </body>
+</html>
