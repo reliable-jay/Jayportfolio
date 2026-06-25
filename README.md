@@ -1,1 +1,1 @@
-A Fully functional perfumes selling E-Commerce website.
+A fully functional perfume selling E-Commerce website.
