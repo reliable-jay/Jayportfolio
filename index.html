@@ -13,14 +13,14 @@
       property="og:description"
       content="I build clean, fast, responsive and accessible web experiences."
     />
-    <meta
+    <metakt
       property="og:image"
       content="https://res.cloudinary.com/doowcez6w/image/upload/v1780394842/jbt-logo_wn7fb5.png"
     />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="" />
-    <!-- <meta property="og:image:width" content="1200" /> -->
-    <!-- <meta property="og:image:height" content="630" /> -->
+    <meta property="og:url" content="https://jayportfolio-kohl.vercel.app" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <title>JBT | FreshNess Perfumes</title>
     <!-- Font Awesome CDN -->
     <link
@@ -47,6 +47,7 @@
           class="logo"
           src="https://res.cloudinary.com/doowcez6w/image/upload/v1780394811/fnLogo_e6mkhp.png"
           alt="webpage's logo"
+          loading="lazy"
         />
       </figure>
       <div class="select-wrapper">
@@ -69,7 +70,14 @@
         <ul id="nav-links" class="nav-links">
           <li><a href="#home-hero">Home</a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="#about">Posts</a></li>
+          <li>
+            <a
+              href="https://magfeedback.netlify.app/"
+              target="_blank"
+              rel="noreferrer noopener"
+              >Posts</a
+            >
+          </li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -94,6 +102,7 @@
             class="hero-img"
             src=""
             alt="product's brand pictures"
+            loading="lazy"
           />
           <figcaption>Fragrance that speaks your soul.</figcaption>
         </figure>
@@ -102,68 +111,80 @@
       </section>
       <hr class="hr-rule" />
       <section id="products-catalog" class="flex-display products-catalog">
-        <article id="fm-category">
+        <article id="fm-category" data-name="Fresh and Modern" data-price="200">
           <figure>
             <img
               src="https://res.cloudinary.com/doowcez6w/image/upload/v1780398306/fm-ctg_gius3h.jpg"
               alt="fresh and modern brand picture"
+              loading="lazy"
             />
             <figcaption>Clean, crisp, and effortlessly modern</figcaption>
           </figure>
           <h2 class="brand-name">Fresh and Modern</h2>
-          <p class="product1"></p>
           <p class="price">&dollar;200</p>
           <button class="cta-btn" type="button">Add to Cart</button>
         </article>
-        <article id="le-category">
+        <article
+          id="le-category"
+          data-name="Luxury and Elegant"
+          data-price="250"
+        >
           <figure>
             <img
               src="https://res.cloudinary.com/doowcez6w/image/upload/v1780398352/le-ctg_eimtb2.jpg"
               alt="luxury and elegant brand picture"
+              loading="lazy"
             />
             <figcaption>Golden sophistication, pure prestige</figcaption>
           </figure>
           <h2 class="brand-name">Luxury and Elegant</h2>
-          <p class="product2"></p>
           <p class="price">&dollar;250</p>
           <button class="cta-btn" type="button">Add to Cart</button>
         </article>
-        <article id="md-category">
+        <article
+          id="md-category"
+          data-name="Mystical and Dreamy"
+          data-price="200"
+        >
           <figure>
             <img
               src="https://res.cloudinary.com/doowcez6w/image/upload/v1780398362/md-ctg_ckk4u5.jpg"
               alt="mystical and dreamy brand picture"
+              loading="lazy"
             />
             <figcaption>Mystery wrapped in moonlight</figcaption>
           </figure>
           <h2 class="brand-name">Mystical and Dreamy</h2>
-          <p class="product3"></p>
           <p class="price">&dollar;200</p>
           <button class="cta-btn" type="button">Add to Cart</button>
         </article>
-        <article id="rf-category">
+        <article
+          id="rf-category"
+          data-name="Romantic and Floral"
+          data-price="250"
+        >
           <figure>
             <img
               src="https://res.cloudinary.com/doowcez6w/image/upload/v1780398375/rf-ctg_ew5jrf.jpg"
               alt="romantic and floral brand picture"
+              loading="lazy"
             />
             <figcaption>A touch of romance in every bloom</figcaption>
           </figure>
           <h2 class="brand-name">Romantic and Floral</h2>
-          <p class="product4"></p>
           <p class="price">&dollar;250</p>
           <button class="cta-btn" type="button">Add to Cart</button>
         </article>
-        <article id="sb-category">
+        <article id="sb-category" data-name="Sensual and Bold" data-price="150">
           <figure>
             <img
               src="https://res.cloudinary.com/doowcez6w/image/upload/v1780398394/sb-ctg_cluxxd.jpg"
               alt="sensual and bold brand picture"
+              loading="lazy"
             />
             <figcaption>Passion that lingers boldly</figcaption>
           </figure>
           <h2 class="brand-name">Sensual and Bold</h2>
-          <p class="product5"></p>
           <p class="price">&dollar;150</p>
           <button class="cta-btn" type="button">Add to Cart</button>
         </article>
@@ -172,6 +193,7 @@
             <img
               src="https://res.cloudinary.com/doowcez6w/image/upload/v1780398306/fm-ctg_gius3h.jpg"
               alt="fresh and modern brand picture"
+              loading="lazy"
             />
             <figcaption>Amber warmth, daring allure</figcaption>
           </figure>
@@ -190,6 +212,7 @@
               src="https://res.cloudinary.com/doowcez6w/image/upload/v1780394842/jbt-logo_wn7fb5.png"
               alt="author's logo"
               class="author-img"
+              loading="lazy"
             />
           </figure>
         </article>
@@ -204,6 +227,7 @@
             id="linkedin"
             href="https://www.linkedin.com/in/johnymagai"
             target="_blank"
+            rel="noreferrer noopener"
             >Connect with me on LinkedIn</a
           >
         </article>
@@ -212,7 +236,7 @@
       <section id="contact" class="contact">
         <form
           id="contact-form"
-          action="https://formspree.io/f/xnjwvgga"
+          action="https://formspree.io/f/mojzanna"
           method="post"
           autocomplete="on"
         >
@@ -222,7 +246,7 @@
               ( <span class="asterisk">*</span> indicates required field )
             </legend>
             <label for="full-name"
-              >Full Name<span class="asterisk">*</span></label
+              >Full Name <span class="asterisk">*</span></label
             >
             <input
               id="full-name"
@@ -231,7 +255,7 @@
               name="name"
               required
             />
-            <label for="email">Email<span class="asterisk">*</span></label>
+            <label for="email">Email <span class="asterisk">*</span></label>
             <input
               id="email"
               type="email"
@@ -240,7 +264,7 @@
               required
             />
             <label for="comments"
-              >Comment Please<span class="asterisk">*</span></label
+              >Comment Please <span class="asterisk">*</span></label
             >
             <textarea
               id="comments"
@@ -256,12 +280,12 @@
         </form>
       </section>
     </main>
-    <!-- <section id="dialog-modal"> -->
+    <!-- DIALOG Section -->
     <dialog id="dialog">
-      <h3 class="head-3">Items on your cart:</h3>
+      <h3 class="head-3">Items in your cart:</h3>
       <ul>
         <li>
-          <span class="item-selected-with-price">A</span>
+          <span class="item-selected-with-price"></span>
           <input
             type="button"
             class="remove-item-btn"
@@ -270,7 +294,7 @@
           />
         </li>
         <li>
-          <span class="item-selected-with-price">B</span>
+          <span class="item-selected-with-price"></span>
           <input
             type="button"
             class="remove-item-btn"
@@ -279,7 +303,7 @@
           />
         </li>
         <li>
-          <span class="item-selected-with-price">C</span>
+          <span class="item-selected-with-price"></span>
           <input
             type="button"
             class="remove-item-btn"
@@ -288,7 +312,7 @@
           />
         </li>
         <li>
-          <span class="item-selected-with-price">D</span>
+          <span class="item-selected-with-price"></span>
           <input
             type="button"
             class="remove-item-btn"
@@ -297,7 +321,7 @@
           />
         </li>
         <li>
-          <span class="item-selected-with-price">E</span>
+          <span class="item-selected-with-price"></span>
           <input
             type="button"
             class="remove-item-btn"
@@ -306,7 +330,7 @@
           />
         </li>
         <li>
-          <span class="item-selected-with-price">F</span>
+          <span class="item-selected-with-price"></span>
           <input
             type="button"
             class="remove-item-btn"
@@ -315,10 +339,12 @@
           />
         </li>
       </ul>
+      <p id="cart-total" class="cart-total"></p>
       <button type="button" class="checkout-btn">Checkout</button>
       <button type="button" class="close-btn">Cancel</button>
     </dialog>
-    <!-- </section> -->
+
+    <!-- Footer Section -->
     <footer class="footer">
       <p class="small-text">
         © 2026 Jay Bombastic Tech • Built with Passion 💙
