@@ -45,7 +45,7 @@ document.getElementById("shop-btn").addEventListener("click", () => {
   }, 3000); // 3000ms = 3 seconds
 });
 
-// --- COUNTER UPDATING ---
+// --- CART COUNTER STATE ---
 const counterElement = document.querySelector(".cart-count");
 let counter = 0;
 
@@ -59,30 +59,95 @@ addToCartBtns.forEach((button) => {
   });
 });
 
+let cart = [];
+// Map each article to its product data using data-* attributes.
+// Attach "Add to Cart" listeners to every button
+document.querySelectorAll(".cta-btn").forEach(function (button) {
+  button.addEventListener("click", function () {
+    // Walk up to the parent <article> to read the product data
+    const article = button.closest("article");
+    const name = article.dataset.name; // Reads data-name="..."
+    const price = Number(article.dataset.price); // Reads data-price="..."
+
+    cart.push({ name, price }); // Add to array
+    renderCart(); // Refresh the dialog list
+  });
+});
+
+// This one function rebuilds the cart dialog from scratch every time
+function renderCart() {
+  const listItems = document.querySelectorAll("#dialog li");
+  const spans = document.querySelectorAll("#dialog .item-selected-with-price");
+  const removeBtns = document.querySelectorAll("#dialog .remove-item-btn");
+
+  // Clear all existing rows first
+  spans.forEach(function (span) {
+    span.textContent = "";
+  });
+  removeBtns.forEach(function (btn) {
+    btn.disabled = true;
+  });
+
+  // Fill in rows for each cart item
+  cart.forEach(function (item, index) {
+    spans[index].textContent = item.name + " — $" + item.price;
+    removeBtns[index].disabled = false;
+
+    // Attach remove listener fresh each time (override old ones)
+    removeBtns[index].onclick = function () {
+      cart.splice(index, 1); // remove this item from the array
+      counter--;
+      counterElement.textContent = counter;
+      renderCart(); // re-render
+    };
+  });
+
+  // Calculate and display the running total
+  const total = cart.reduce(function (sum, item) {
+    return sum + item.price;
+  }, 0);
+
+  const totalEl = document.getElementById("cart-total");
+  if (totalEl) {
+    totalEl.textContent = cart.length > 0 ? "Total: $" + total : "";
+  }
+}
+
 // --- DISPLAY RANDOM HERO-IMAGE ---
 const heroImages = [
   "https://res.cloudinary.com/doowcez6w/image/upload/v1780394921/bg-img1_yqayxb.jpg",
   "https://res.cloudinary.com/doowcez6w/image/upload/v1780394972/bg-img2_iyvgrw.jpg",
-  "https://res.cloudinary.com/doowcez6w/image/upload/v1780394921/bg-img1_yqayxb.jpg"
+  "https://res.cloudinary.com/doowcez6w/image/upload/v1780394921/bg-img1_yqayxb.jpg",
 ];
 
 const randomIndex = Math.floor(Math.random() * heroImages.length);
 
 document.getElementById("hero-img").src = heroImages[randomIndex];
 
-// --- PAGE DIALOG (Modal) BOX ---
+// --- DIALOG (Modal) BOX STATE ---
 const dialog = document.getElementById("dialog");
 const closeBtn = document.querySelector(".close-btn");
 const openModalBtn = document.querySelector(".shopping-cart");
+const checkoutBtn = document.querySelector(".checkout-btn");
 
 openModalBtn.addEventListener("click", () => {
   dialog.showModal();
   document.body.style.overflow = "hidden";
 });
 
+checkoutBtn.addEventListener("click", () => {
+  alert("Thank you for your patronage 💙\n Coming soon...!");
+  setTimeout(() => {
+    window.location.reload(); // Refresh page
+  }, 1500);
+});
+
 closeBtn.addEventListener("click", () => {
   dialog.close();
   document.body.style.overflow = "";
+  setTimeout(() => {
+    window.location.reload(); // Refresh page 5second after triggering the Close button
+  }, 5000);
 });
 
 // --- Close the modal when clicking outside of it ---
@@ -128,75 +193,3 @@ form.addEventListener("submit", async (e) => {
     alert("Something went wrong.");
   }
 });
-
-// --- REDUNDANT FOR FUTURE USE ONLY ---
-// const dialog = document.getElementById("dialog");
-// const closeBtn = document.querySelector(".close-btn");
-// const openModalBtn = document.querySelector(".shopping-cart");
-
-// openModalBtn.addEventListener("click", () => {
-//   // Save exactly where the user is on the page right now
-//   const scrollY = window.scrollY;
-//   const scrollX = window.scrollX;
-
-//   dialog.showModal();
-//   document.body.style.overflow = "hidden";
-
-//   // Snap the page back to where the user was (browser may have moved it)
-//   window.scrollTo(scrollX, scrollY);
-// });
-
-// closeBtn.addEventListener("click", () => {
-//   // Save position again before closing (just in case)
-//   const scrollY = window.scrollY;
-//   const scrollX = window.scrollX;
-
-//   dialog.close();
-//   document.body.style.overflow = "";
-
-//   // Restore position after closing
-//   window.scrollTo(scrollX, scrollY);
-// });
-
-// // --- FORM VALIDATION ---
-// const form = document.querySelector("form");
-
-// // --- VALIDATION FUNCTION ---
-// function validateField(input) {
-//   if (input.checkValidity()) {
-//     input.style.borderColor = "#004643"; // green = valid
-//   } else {
-//     input.style.borderColor = "#aa0606"; // red = invalid
-//   }
-// }
-
-// // --- GRAB ALL INPUTS ---
-// const nameInput = document.getElementById("full-name");
-// const userEmail = document.getElementById("email");
-// const comment = document.getElementById("comments");
-
-// // --- ATTACH BLUR LISTENERS (outside submit, so they work while user types) ---
-// nameInput.addEventListener("blur", () => validateField(nameInput));
-// userEmail.addEventListener("blur", () => validateField(userEmail));
-// comment.addEventListener("blur", () => validateField(comment));
-
-// // --- SUBMIT HANDLER ---
-// form.addEventListener("submit", (e) => {
-//   e.preventDefault(); // stops page reload
-
-//   // Validate all fields once more on submit, in case user never clicked them
-//   validateField(nameInput);
-//   validateField(userEmail);
-//   validateField(comment);
-
-//   // Only proceed if the entire form is valid
-//   if (form.checkValidity()) {
-//     // console.log("Form submitted successfully!");
-//     form.reset(); // clears all inputs
-
-//     // Reset border colors after clearing (reset() doesn't clear styles)
-//     nameInput.style.borderColor = "";
-//     userEmail.style.borderColor = "";
-//     comment.style.borderColor = "";
-//   }
-// });
